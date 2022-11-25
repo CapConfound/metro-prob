@@ -138,4 +138,16 @@ for i in hit_probability:
 
 print("Оценки средней плотности распределения вероятности в интервале : {}".format(avg_prob_dipersion_density))
 
+
+skr_otkl = expectedValue / pow(control_n, 0.5)
+print("Cреднеквадратическое отклонение среднеарифметических значений: {}".format(skr_otkl))
+
+# Вычисление ширины доверительного интервала
+stud = 1.699
+dov_inter = stud * skr_otkl
+print("Вычисление ширины доверительного интервала: {}".format(dov_inter))
+
+# Результат измерения
+print("result = {} ± {}".format(expectedValue, prob_dover))
+
 plt.show()
