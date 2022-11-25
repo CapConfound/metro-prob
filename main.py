@@ -1,5 +1,3 @@
-import scipy.stats
-import numpy as np
 import matplotlib.pyplot as plt
 
 row = [385, 406, 388, 400, 408, 392, 413, 397, 392, 404, 386, 393, 368, 385, 405, 395, 390, 405, 405, 407, 386, 417, 410, 400, 388, 405, 380, 420, 402, 377]
