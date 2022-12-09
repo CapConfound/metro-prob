@@ -97,7 +97,6 @@ mult = 0
 z = x_min + (mult * r_width)
 
 while (z <= x_max):
-    print("z = {}".format(z))
     bin_borders.append(round(z))
     mult += 1
     z = x_min + (mult * r_width)
