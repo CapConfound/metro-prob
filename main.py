@@ -87,9 +87,9 @@ r = 9
 
 # Ширина бинов
 
-r_width = (x_max - x_min) / r
+r_width = round((x_max - x_min) / r)
 
-print("Ширина бинов - {}".format(round(r_width, 3)))
+print("Ширина бинов - {}".format(r_width))
 
 bin_borders = []
 mult = 0
@@ -97,9 +97,14 @@ mult = 0
 z = x_min + (mult * r_width)
 
 while (z <= x_max):
+    print("z = {}".format(z))
     bin_borders.append(round(z))
     mult += 1
     z = x_min + (mult * r_width)
+
+if x_max not in bin_borders and z > x_max:
+    z = x_max
+    bin_borders.append(round(z))
 
 print("Границы бинов: {}".format(bin_borders))
 
