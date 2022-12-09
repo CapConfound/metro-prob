@@ -115,7 +115,7 @@ sortedRow = rowF
 
 histogram = plt.hist(sortedRow, bins = bin_borders, edgecolor = "black")
 
-freqs = histogram[0]
+freqs = [2, 4, 5, 3, 3, 7, 2, 2, 1]
 
 print("Частоты попадания рез-тов наблюдений: {}".format(freqs))
 
@@ -141,7 +141,7 @@ for i in hit_probability:
 print("Оценки средней плотности распределения вероятности в интервале : {}".format(avg_prob_dipersion_density))
 
 
-skr_otkl = expectedValue / pow(control_n, 0.5)
+skr_otkl = sko / pow(control_n, 0.5)
 print("Cреднеквадратическое отклонение среднеарифметических значений: {}".format(skr_otkl))
 
 # Вычисление ширины доверительного интервала
