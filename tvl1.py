@@ -1,4 +1,4 @@
-import math
+from math import floor, log, e, sqrt, pi, exp
 
 
 def midbin(k: int, xs: list) -> list:
@@ -29,7 +29,7 @@ def intervals(k, xs) -> list:
     return res
 
 
-def freq(array: list, start, fin, relative = False, cumulative = False):
+def freq(array: list, start, fin, relative = False, cumulative = False) -> float:
 
     int = []
     for el in array:
@@ -40,28 +40,29 @@ def freq(array: list, start, fin, relative = False, cumulative = False):
     print('def freq - Ints:')
     print(int)
 
-    if not cumulative:
+    if cumulative:
+        ni = sum(int)
+    else:
         ni = len(int)
 
-    else:
-        ni = sum(int)
-
-
-    if not relative:
-        result = ni
-    else:
+    if relative:
         result = ni / len(array)
+    else:
+        result = ni
 
     return result
 
+def freq_norm(array: list, start, mid, fin):
+    int = []
+    for el in array:
+        if el < start or el > fin:
+            continue
+        int.append(el)
 
+    for i in range()
+    x_d = freq(array, start, fin, True) * mid
 
-
-
-# def freq_cumulative(n_list: list, length: int, relative = False):
-
-
-
+    res = (1 / sqrt(2 * pi)) * exp(-0.5 * pow(((mid - x_d) / sx) , 2))
 
 
 
@@ -80,7 +81,7 @@ n: int = len(x)
 print("Вариационный ряд:\n{}\n".format(xSort))
 
 # Количество k интервалов разбиения диапазона
-bin_num = math.floor(math.log(n, math.e))
+bin_num = floor(log(n, e))
 print("Количество интервалов разбиения диапазона\n{}\n".format(bin_num))
 
 #
@@ -116,10 +117,7 @@ print("\nОтносительная накопленная частота")
 rel_cum_freq = abs_cum_freq / len(xSort)
 print(rel_cum_freq)
 
+# Выборочное среднее - относительные частоты * средние значения
 
 
 
-
-
-
-# abs_freq(xSort, xSort)
