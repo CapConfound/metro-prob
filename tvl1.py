@@ -52,19 +52,6 @@ def freq(array: list, start, fin, relative = False, cumulative = False) -> float
 
     return result
 
-def freq_norm(array: list, start, mid, fin):
-    int = []
-    for el in array:
-        if el < start or el > fin:
-            continue
-        int.append(el)
-
-    for i in range()
-    x_d = freq(array, start, fin, True) * mid
-
-    res = (1 / sqrt(2 * pi)) * exp(-0.5 * pow(((mid - x_d) / sx) , 2))
-
-
 
 x = [
     24.44, 18.72, 41.16, 15.22, 6.64, 9.38, 52.47, 64.75, 40.11, 10.69, 40.24,
@@ -81,7 +68,7 @@ n: int = len(x)
 print("Вариационный ряд:\n{}\n".format(xSort))
 
 # Количество k интервалов разбиения диапазона
-bin_num = floor(log(n, e))
+bin_num = floor(5 * log(n, 10))
 print("Количество интервалов разбиения диапазона\n{}\n".format(bin_num))
 
 #
@@ -119,5 +106,25 @@ print(rel_cum_freq)
 
 # Выборочное среднее - относительные частоты * средние значения
 
+vib_sr: float = 0
+for i in range(len(ints)):
+    vib_sr += absol_f[i] * ints[i][1]
 
+sko: float = 0
+for i in range(len(ints)):
+    sko = pow((absol_f[i] - vib_sr), 2) * ints[i][1]
+sko = sqrt(sko)
+
+
+print("Абсолютная частота для нормального рпиблежения")
+abs_freq_norm = []
+for i in range(len(ints)):
+    print("Для интервала ", i)
+    temp = (1 / sqrt(2 * pi)) * exp(-0.5 * pow(((absol_f[i] - vib_sr) / sko) , 2))
+    abs_freq_norm.append(temp)
+    print(temp)
+
+e = (1 / bin_num )
+
+# for i in range (len(ints)):
 
